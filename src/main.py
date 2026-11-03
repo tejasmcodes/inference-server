@@ -17,9 +17,12 @@ def health_check():
 
 @app.post("/predict")
 def predict(request: PredictionRequest):
+    model_input = [[request.age, request.salary]]
+    prediction = model.predict(model_input)
     return{
         "age": request.age,
         "salary": request.salary,
+        "predicted_credit_limit": prediction[0]
     }
 
     

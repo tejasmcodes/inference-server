@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import joblib
 
 from pydantic import BaseModel
 class PredictionRequest(BaseModel):
@@ -7,6 +8,8 @@ class PredictionRequest(BaseModel):
     
 
 app = FastAPI()
+model = joblib.load('models/regression_model.joblib')
+print("Model loaded successfully.")
 
 @app.get("/health")
 def health_check():

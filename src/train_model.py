@@ -37,6 +37,6 @@ f"Model Coefficients: {model.coef_}")
 print(f"R² Score (Accuracy): {r2_score(y_test, y_pred):.2f}")
 
 # 6. Save the trained model using joblib
-model_filename = 'src/models/regression_model.joblib'
+model_filename = 'models/regression_model.joblib'
 joblib.dump(model, model_filename)
 print(f"Model successfully saved to '{model_filename}'")
